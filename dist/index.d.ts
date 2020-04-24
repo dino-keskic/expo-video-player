@@ -27,7 +27,11 @@ declare type Props = {
     spinner: () => JSX.Element;
     fullscreenEnterIcon: () => JSX.Element;
     fullscreenExitIcon: () => JSX.Element;
+    transparentControlButtons: boolean;
     showFullscreenButton: boolean;
+    showDuration: boolean;
+    showSeekBar: boolean;
+    showCurrentTime: boolean;
     iosThumbImage: ImageURISource;
     iosTrackImage: ImageURISource;
     textStyle: TextStyle;
@@ -62,6 +66,10 @@ declare const _default: (props: Pick<Props, "videoProps"> & {
     videoBackground?: string | undefined;
     width?: number | undefined;
     height?: number | undefined;
+    showCurrentTime?: boolean | undefined;
+    showDuration?: boolean | undefined;
+    showSeekBar?: boolean | undefined;
+    transparentControlButtons?: boolean | undefined;
     errorCallback?: ((error: Error) => void) | undefined;
     debug?: boolean | undefined;
     playbackCallback?: ((callback: AVPlaybackStatus) => void) | undefined;
