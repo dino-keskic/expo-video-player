@@ -36,6 +36,8 @@ declare type Props = {
     iosTrackImage: ImageURISource;
     textStyle: TextStyle;
     videoBackground: Color;
+    centeredContentWidth: number;
+    centeredContentHeight: number;
     debug: boolean;
     playbackCallback: (callback: AVPlaybackStatus) => void;
     errorCallback: (error: Error) => void;
@@ -70,6 +72,8 @@ declare const _default: (props: Pick<Props, "videoProps"> & {
     showDuration?: boolean | undefined;
     showSeekBar?: boolean | undefined;
     transparentControlButtons?: boolean | undefined;
+    centeredContentWidth?: number | undefined;
+    centeredContentHeight?: number | undefined;
     errorCallback?: ((error: Error) => void) | undefined;
     debug?: boolean | undefined;
     playbackCallback?: ((callback: AVPlaybackStatus) => void) | undefined;

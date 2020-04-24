@@ -85,6 +85,8 @@ const defaultProps = {
   fadeOutDuration: 1000,
   quickFadeOutDuration: 200,
   hideControlsTimerDuration: 4000,
+  centeredContentWidth: 60,
+  centeredContentHeight: 60,
 
   // Icons
   playIcon: PlayIcon,
@@ -153,6 +155,8 @@ type Props = {
   iosTrackImage: ImageURISource
   textStyle: TextStyle
   videoBackground: Color
+  centeredContentWidth: number
+  centeredContentHeight: number
 
   // Callbacks
   debug: boolean
@@ -510,9 +514,10 @@ const VideoPlayer = (props: Props) => {
     showDuration,
     showSeekBar,
     transparentControlButtons,
+    centeredContentWidth,
+    centeredContentHeight,
   } = props
 
-  const centeredContentWidth = 60
   const screenRatio = width / height
 
   let videoHeight = height
@@ -556,7 +561,7 @@ const VideoPlayer = (props: Props) => {
             backgroundColor: transparent ? 'transparent' : 'rgba(0, 0, 0, 0.4)',
             justifyContent: 'center',
             width: centeredContentWidth,
-            height: centeredContentWidth,
+            height: centeredContentHeight,
             borderRadius: centeredContentWidth,
           }
         }

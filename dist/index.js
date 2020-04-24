@@ -51,6 +51,8 @@ const defaultProps = {
     fadeOutDuration: 1000,
     quickFadeOutDuration: 200,
     hideControlsTimerDuration: 4000,
+    centeredContentWidth: 60,
+    centeredContentHeight: 60,
     // Icons
     playIcon: PlayIcon,
     replayIcon: ReplayIcon,
@@ -345,8 +347,7 @@ const VideoPlayer = (props) => {
         }
         controlsTimer = setTimeout(() => onTimerDone(), hideControlsTimerDuration);
     };
-    const { playIcon: VideoPlayIcon, pauseIcon: VideoPauseIcon, spinner: VideoSpinner, fullscreenEnterIcon: VideoFullscreenEnterIcon, fullscreenExitIcon: VideoFullscreenExitIcon, replayIcon: VideoReplayIcon, switchToLandscape, switchToPortrait, inFullscreen, sliderColor, iosThumbImage, iosTrackImage, showFullscreenButton, textStyle, videoProps, videoBackground, width, height, showCurrentTime, showDuration, showSeekBar, transparentControlButtons, } = props;
-    const centeredContentWidth = 60;
+    const { playIcon: VideoPlayIcon, pauseIcon: VideoPauseIcon, spinner: VideoSpinner, fullscreenEnterIcon: VideoFullscreenEnterIcon, fullscreenExitIcon: VideoFullscreenExitIcon, replayIcon: VideoReplayIcon, switchToLandscape, switchToPortrait, inFullscreen, sliderColor, iosThumbImage, iosTrackImage, showFullscreenButton, textStyle, videoProps, videoBackground, width, height, showCurrentTime, showDuration, showSeekBar, transparentControlButtons, centeredContentWidth, centeredContentHeight, } = props;
     const screenRatio = width / height;
     let videoHeight = height;
     let videoWidth = videoHeight * screenRatio;
@@ -369,7 +370,7 @@ const VideoPlayer = (props) => {
             backgroundColor: transparent ? 'transparent' : 'rgba(0, 0, 0, 0.4)',
             justifyContent: 'center',
             width: centeredContentWidth,
-            height: centeredContentWidth,
+            height: centeredContentHeight,
             borderRadius: centeredContentWidth,
         }}>
         {children}
